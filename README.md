@@ -202,7 +202,7 @@ docs/            01-05 文档
 
 - 题号：1
 - GitHub URL：https://github.com/zhuogeyyds/xiaoying-agent-project-1
-- 最终 commit SHA：见提交表单（以最终 HEAD 为准）
+- 最终 commit SHA：6563b6b16f31c276127b363969b903e89279fac2
 - 私有仓库授权：公开仓库，无需授权
 
 ## 安全说明
