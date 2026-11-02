@@ -1,0 +1,9 @@
+{
+  "case_id": "05-m01-save-failure",
+  "mode": "mock",
+  "boundary": "仅验证工具与流程，不证明真实模型决策效果；真实模式仍使用 ReAct Agent，模型不可用时明确报错，不自动降级。",
+  "task_status": "mock_save_failed",
+  "final_output": "[MOCK] 仅验证流程，不证明真实模型决策效果。\n素材 M01：Mock 保存失败：模拟保存失败：草稿写入被拒绝（故障注入），未产生草稿",
+  "drafts": [],
+  "trace": "examples/traces/mock-05-m01-save-failure.json"
+}

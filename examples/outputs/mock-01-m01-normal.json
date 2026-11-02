@@ -1,0 +1,24 @@
+{
+  "case_id": "01-m01-normal",
+  "mode": "mock",
+  "boundary": "仅验证工具与流程，不证明真实模型决策效果；真实模式仍使用 ReAct Agent，模型不可用时明确报错，不自动降级。",
+  "task_status": "mock_draft_saved",
+  "final_output": "[MOCK] 仅验证流程，不证明真实模型决策效果。\n素材 M01：Mock 已保存草稿 D001（19:00，仅草稿）。",
+  "drafts": [
+    {
+      "draft_id": "D001",
+      "material_id": "M01",
+      "date": "2026-11-05",
+      "time": "19:00",
+      "status": "draft_pending_confirmation",
+      "pending_confirmations": [
+        "原要求 2026-11-05 18:00 已被占用",
+        "Mock 按脚本选择替代时段 19:00",
+        "替代时段需用户确认"
+      ],
+      "idempotency_key": "M01:2026-11-05",
+      "created_at": "2026-10-31T17:08:44+08:00"
+    }
+  ],
+  "trace": "examples/traces/mock-01-m01-normal.json"
+}

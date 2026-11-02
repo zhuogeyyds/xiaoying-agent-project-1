@@ -1,0 +1,73 @@
+{
+  "materials": [
+    {
+      "material_id": "M01",
+      "title": "秋季新品预热短视频",
+      "category": "marketing",
+      "duration_minutes": 30,
+      "publish_date": "2026-11-05",
+      "requested_time": "18:00",
+      "hard_time_requirement": true,
+      "source_license": "自有素材",
+      "description": "新品预热，卖点介绍，无医疗或绝对化表述。",
+      "owner": "内容组A"
+    },
+    {
+      "material_id": "M02",
+      "title": "用户访谈剪辑",
+      "publish_date": "2026-11-05",
+      "requested_time": "19:00",
+      "hard_time_requirement": true,
+      "source_license": "已获授权",
+      "description": "访谈精华，分类与时长尚待补充。",
+      "owner": "内容组B"
+    },
+    {
+      "material_id": "M03",
+      "title": "老中医推荐：三招治愈肩颈疼痛",
+      "category": "health",
+      "duration_minutes": 45,
+      "publish_date": "2026-11-05",
+      "requested_time": "20:00",
+      "hard_time_requirement": true,
+      "source_license": "已获授权",
+      "description": "含治疗、疗效、治愈等医疗宣称，需要拦截。",
+      "owner": "内容组C"
+    },
+    {
+      "material_id": "M04",
+      "title": "护眼产品种草短视频",
+      "category": "product",
+      "duration_minutes": 30,
+      "publish_date": "2026-11-07",
+      "requested_time": "18:00",
+      "hard_time_requirement": true,
+      "source_license": "已获授权",
+      "description": "主播口播含“药到病除”医疗宣称；该时段本身可用。",
+      "owner": "内容组D"
+    },
+    {
+      "material_id": "M05",
+      "title": "品牌周年庆花絮",
+      "category": "brand",
+      "duration_minutes": 60,
+      "publish_date": "2026-11-06",
+      "requested_time": "18:00",
+      "hard_time_requirement": true,
+      "source_license": "自有素材",
+      "description": "低风险内容，但当天排期已满。",
+      "owner": "内容组E"
+    },
+    {
+      "material_id": "M06",
+      "title": "课程介绍口播",
+      "category": "education",
+      "duration_minutes": 20,
+      "publish_date": "2026-11-08",
+      "requested_time": "18:00",
+      "hard_time_requirement": false,
+      "description": "缺少素材授权来源，可补查后再排期。",
+      "owner": "内容组F"
+    }
+  ]
+}

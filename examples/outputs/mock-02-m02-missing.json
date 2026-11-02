@@ -1,0 +1,9 @@
+{
+  "case_id": "02-m02-missing",
+  "mode": "mock",
+  "boundary": "仅验证工具与流程，不证明真实模型决策效果；真实模式仍使用 ReAct Agent，模型不可用时明确报错，不自动降级。",
+  "task_status": "mock_blocked",
+  "final_output": "[MOCK] 仅验证流程，不证明真实模型决策效果。\n素材 M02：规则未通过，Mock 阻断：R02 缺少字段：duration_minutes、category",
+  "drafts": [],
+  "trace": "examples/traces/mock-02-m02-missing.json"
+}

@@ -1,0 +1,13 @@
+{
+  "case": "llm-smoke",
+  "timestamp": "2026-10-31T15:44:17+08:00",
+  "model": "qwen-plus",
+  "temperature": 0.0,
+  "api_key_source": "环境变量 DASHSCOPE_API_KEY（已设置，值不记录）",
+  "prompt": "这是一次连通性测试。请只回复：PONG-QWEN-PLUS",
+  "status": "failed",
+  "category": "额度不足",
+  "error": "[额度不足] 真实通义千问调用失败：HTTPError: HTTP error occurred: status_code: 403 \n code: AllocationQuota.FreeTierOnly \n message: Free quota exhausted. To continue accessing the model on a paid basis, please add funds or disable the \"use free tier only\" mode in the management console.",
+  "latency_ms": 200,
+  "note": "真实模型调用失败，已停止；未使用 Mock 降级。"
+}

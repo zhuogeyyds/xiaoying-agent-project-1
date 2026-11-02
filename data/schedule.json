@@ -1,0 +1,95 @@
+{
+  "schedule": [
+    {
+      "date": "2026-11-05",
+      "time": "18:00",
+      "material_id": "M00",
+      "title": "常规栏目",
+      "duration_minutes": 30
+    },
+    {
+      "date": "2026-11-06",
+      "time": "09:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "10:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "11:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "12:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "13:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "14:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "15:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "16:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "17:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "18:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "19:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    },
+    {
+      "date": "2026-11-06",
+      "time": "20:00",
+      "material_id": "S00",
+      "title": "已排期内容",
+      "duration_minutes": 60
+    }
+  ]
+}

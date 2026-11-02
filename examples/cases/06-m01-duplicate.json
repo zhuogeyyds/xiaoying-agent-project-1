@@ -1,0 +1,10 @@
+{
+  "case_id": "06-m01-duplicate",
+  "material_id": "M01",
+  "date": "2026-11-05",
+  "time": "18:00",
+  "hard_time": true,
+  "fail_save": false,
+  "max_steps": 16,
+  "instruction": "请再次处理素材 M01 在 2026-11-05 的排期。用户仍要求 18:00，硬性时间不得更改。如果此前已保存过相同素材同一天的草稿，请返回已有草稿编号并说明是重复提交，不要新增草稿。"
+}

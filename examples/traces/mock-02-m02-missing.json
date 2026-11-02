@@ -1,0 +1,75 @@
+{
+  "run_id": "mock-02-m02-missing-20261031170923",
+  "case_id": "02-m02-missing",
+  "mode": "mock",
+  "boundary": "仅验证工具与流程，不证明真实模型决策效果；真实模式仍使用 ReAct Agent，模型不可用时明确报错，不自动降级。",
+  "model": null,
+  "temperature": null,
+  "created_at": "2026-10-31T17:09:23+08:00",
+  "events": [
+    {
+      "step": 1,
+      "type": "tool",
+      "tool": "read_material",
+      "args": {
+        "material_id": "M02"
+      },
+      "result": {
+        "ok": true,
+        "found": true,
+        "material": {
+          "material_id": "M02",
+          "title": "用户访谈剪辑",
+          "publish_date": "2026-11-05",
+          "requested_time": "19:00",
+          "hard_time_requirement": true,
+          "source_license": "已获授权",
+          "description": "访谈精华，分类与时长尚待补充。",
+          "owner": "内容组B"
+        },
+        "missing_fields": [
+          "duration_minutes",
+          "category"
+        ],
+        "message": "已找到素材 M02，缺少字段：duration_minutes、category"
+      },
+      "summary": "找到素材；缺失字段=['duration_minutes', 'category']"
+    },
+    {
+      "step": 2,
+      "type": "tool",
+      "tool": "check_rules",
+      "args": {
+        "material_id": "M02"
+      },
+      "result": {
+        "passed": false,
+        "blocked": true,
+        "high_risk": true,
+        "needs_supplement": false,
+        "risks": [
+          {
+            "rule_id": "R02",
+            "name": "元数据完整性",
+            "level": "high",
+            "action": "block",
+            "reason": "缺少字段：duration_minutes、category"
+          }
+        ],
+        "confirmations": [],
+        "missing_fields": [
+          "duration_minutes",
+          "category"
+        ],
+        "ok": true,
+        "found": true,
+        "material_id": "M02",
+        "message": "审核未通过，已阻断：R02 缺少字段：duration_minutes、category"
+      },
+      "summary": "passed=False blocked=True needs_supplement=False rules=['R02']"
+    }
+  ],
+  "task_status": "mock_blocked",
+  "drafts": [],
+  "final_output": "[MOCK] 仅验证流程，不证明真实模型决策效果。\n素材 M02：规则未通过，Mock 阻断：R02 缺少字段：duration_minutes、category"
+}

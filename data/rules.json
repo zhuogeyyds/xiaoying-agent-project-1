@@ -1,0 +1,51 @@
+{
+  "rules": [
+    {
+      "rule_id": "R01",
+      "name": "医疗宣称",
+      "type": "keyword",
+      "level": "high",
+      "action": "block",
+      "fields": ["title", "description"],
+      "keywords": ["治疗", "疗效", "治愈", "处方", "药到病除"],
+      "description": "标题或描述命中医疗宣称词，必须阻断。"
+    },
+    {
+      "rule_id": "R02",
+      "name": "元数据完整性",
+      "type": "required_fields",
+      "level": "high",
+      "action": "block",
+      "fields": ["duration_minutes", "category", "publish_date", "requested_time"],
+      "description": "关键元数据缺失，必须阻断并请用户补充。"
+    },
+    {
+      "rule_id": "R03",
+      "name": "绝对化用语",
+      "type": "keyword",
+      "level": "medium",
+      "action": "confirm",
+      "fields": ["title", "description"],
+      "keywords": ["最", "第一", "国家级", "顶级", "100%"],
+      "description": "命中绝对化用语，需要人工确认后再排期。"
+    },
+    {
+      "rule_id": "R04",
+      "name": "素材授权",
+      "type": "required_fields",
+      "level": "medium",
+      "action": "supplement",
+      "fields": ["source_license"],
+      "description": "缺少素材授权来源，需要补充后才能排期。"
+    },
+    {
+      "rule_id": "R05",
+      "name": "超长时长",
+      "type": "max_duration",
+      "level": "low",
+      "action": "confirm",
+      "max_minutes": 60,
+      "description": "时长超过 60 分钟需要人工确认。"
+    }
+  ]
+}

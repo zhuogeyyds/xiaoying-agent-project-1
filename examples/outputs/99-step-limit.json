@@ -1,0 +1,10 @@
+{
+  "case_id": "99-step-limit",
+  "task_status": "incomplete",
+  "final_output": "Sorry, need more steps to process this request.",
+  "drafts": [],
+  "pending_confirmations": [],
+  "step_limit_hit": true,
+  "runner_note": "未完成：达到步数上限（max_steps=8）。已完成部分：read_material、check_rules、query_slots；未执行的工具调用：0 个。",
+  "trace": "examples/traces/99-step-limit.json"
+}

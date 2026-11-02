@@ -1,0 +1,8 @@
+﻿..............                                                           [100%]
+============================== warnings summary ===============================
+tests/test_step_limit.py::test_step_limit_returns_incomplete
+  D:\内容\就业\小影题目\src\agent.py:88: LangGraphDeprecatedSinceV10: create_react_agent has been moved to `langchain.agents`. Please update your import to `from langchain.agents import create_agent`. Deprecated in LangGraph V1.0 to be removed in V2.0.
+    return create_react_agent(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+14 passed, 1 warning in 19.14s

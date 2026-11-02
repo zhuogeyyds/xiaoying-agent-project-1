@@ -1,0 +1,300 @@
+{
+  "case": "p2-tools",
+  "timestamp": "2026-10-31T15:56:51+08:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "数据-素材数量",
+      "passed": true,
+      "detail": "materials=6"
+    },
+    {
+      "name": "数据-规则数量",
+      "passed": true,
+      "detail": "rules=5"
+    },
+    {
+      "name": "数据-排期条目",
+      "passed": true,
+      "detail": "schedule=13"
+    },
+    {
+      "name": "数据-草稿初始为空",
+      "passed": true,
+      "detail": "drafts=0"
+    },
+    {
+      "name": "工具-恰好四个",
+      "passed": true,
+      "detail": "tools=['read_material', 'check_rules', 'query_slots', 'save_draft']"
+    },
+    {
+      "name": "工具-没有发布工具",
+      "passed": true,
+      "detail": "tools=['read_material', 'check_rules', 'query_slots', 'save_draft']"
+    },
+    {
+      "name": "读取-M01 完整",
+      "passed": true,
+      "detail": "已找到素材 M01"
+    },
+    {
+      "name": "读取-M02 缺字段",
+      "passed": true,
+      "detail": "missing=['category', 'duration_minutes']"
+    },
+    {
+      "name": "读取-不存在不抛异常",
+      "passed": true,
+      "detail": "未找到素材 M99"
+    },
+    {
+      "name": "规则-M01 通过",
+      "passed": true,
+      "detail": "审核通过，未发现规则风险"
+    },
+    {
+      "name": "规则-M02 缺字段阻断",
+      "passed": true,
+      "detail": "审核未通过，已阻断：R02 缺少字段：duration_minutes、category"
+    },
+    {
+      "name": "规则-M03 医疗高风险阻断",
+      "passed": true,
+      "detail": "审核未通过，已阻断：R01 命中医疗宣称关键词：治愈、治疗、疗效"
+    },
+    {
+      "name": "规则-M04 风险独立于时段",
+      "passed": true,
+      "detail": "审核未通过，已阻断：R01 命中医疗宣称关键词：药到病除"
+    },
+    {
+      "name": "规则-M06 缺授权需补充",
+      "passed": true,
+      "detail": "审核未通过，已阻断：R04 缺少字段：source_license"
+    },
+    {
+      "name": "时段-M01 18:00 冲突且有替代",
+      "passed": true,
+      "detail": "conflicts=1, alternatives=['19:00', '20:00', '17:00']"
+    },
+    {
+      "name": "时段-M05 全天占满无替代",
+      "passed": true,
+      "detail": "alternatives=[]"
+    },
+    {
+      "name": "时段-M04 可用",
+      "passed": true,
+      "detail": "时段可用"
+    },
+    {
+      "name": "保存-M01 成功且只保存草稿",
+      "passed": true,
+      "detail": "草稿 D001 已保存（仅草稿，未发布）"
+    },
+    {
+      "name": "幂等-重复保存只保留一份",
+      "passed": true,
+      "detail": "draft_id=D001, drafts=1"
+    },
+    {
+      "name": "保存-高风险拒绝",
+      "passed": true,
+      "detail": "规则审核未通过，不能保存草稿：R01 命中医疗宣称关键词：治愈、治疗、疗效"
+    },
+    {
+      "name": "保存-缺字段拒绝",
+      "passed": true,
+      "detail": "素材缺少字段：duration_minutes、category，不能保存草稿"
+    },
+    {
+      "name": "保存-拒绝发布状态",
+      "passed": true,
+      "detail": "状态 'published' 不允许保存。只允许草稿状态：draft、draft_pending_confirmation；不提供发布。"
+    },
+    {
+      "name": "保存-故障注入如实失败",
+      "passed": true,
+      "detail": "error_type=injected_failure, drafts=1"
+    }
+  ],
+  "samples": {
+    "read_m01": {
+      "ok": true,
+      "found": true,
+      "material": {
+        "material_id": "M01",
+        "title": "秋季新品预热短视频",
+        "category": "marketing",
+        "duration_minutes": 30,
+        "publish_date": "2026-11-05",
+        "requested_time": "18:00",
+        "hard_time_requirement": true,
+        "source_license": "自有素材",
+        "description": "新品预热，卖点介绍，无医疗或绝对化表述。",
+        "owner": "内容组A"
+      },
+      "missing_fields": [],
+      "message": "已找到素材 M01"
+    },
+    "read_m02": {
+      "ok": true,
+      "found": true,
+      "material": {
+        "material_id": "M02",
+        "title": "用户访谈剪辑",
+        "publish_date": "2026-11-05",
+        "requested_time": "19:00",
+        "hard_time_requirement": true,
+        "source_license": "已获授权",
+        "description": "访谈精华，分类与时长尚待补充。",
+        "owner": "内容组B"
+      },
+      "missing_fields": [
+        "duration_minutes",
+        "category"
+      ],
+      "message": "已找到素材 M02，缺少字段：duration_minutes、category"
+    },
+    "check_m01": {
+      "passed": true,
+      "blocked": false,
+      "high_risk": false,
+      "needs_supplement": false,
+      "risks": [],
+      "confirmations": [],
+      "missing_fields": [],
+      "ok": true,
+      "found": true,
+      "material_id": "M01",
+      "message": "审核通过，未发现规则风险"
+    },
+    "check_m02": {
+      "passed": false,
+      "blocked": true,
+      "high_risk": true,
+      "needs_supplement": false,
+      "risks": [
+        {
+          "rule_id": "R02",
+          "name": "元数据完整性",
+          "level": "high",
+          "action": "block",
+          "reason": "缺少字段：duration_minutes、category"
+        }
+      ],
+      "confirmations": [],
+      "missing_fields": [
+        "duration_minutes",
+        "category"
+      ],
+      "ok": true,
+      "found": true,
+      "material_id": "M02",
+      "message": "审核未通过，已阻断：R02 缺少字段：duration_minutes、category"
+    },
+    "check_m03": {
+      "passed": false,
+      "blocked": true,
+      "high_risk": true,
+      "needs_supplement": false,
+      "risks": [
+        {
+          "rule_id": "R01",
+          "name": "医疗宣称",
+          "level": "high",
+          "action": "block",
+          "reason": "命中医疗宣称关键词：治愈、治疗、疗效"
+        }
+      ],
+      "confirmations": [],
+      "missing_fields": [],
+      "ok": true,
+      "found": true,
+      "material_id": "M03",
+      "message": "审核未通过，已阻断：R01 命中医疗宣称关键词：治愈、治疗、疗效"
+    },
+    "check_m06": {
+      "passed": false,
+      "blocked": true,
+      "high_risk": false,
+      "needs_supplement": true,
+      "risks": [
+        {
+          "rule_id": "R04",
+          "name": "素材授权",
+          "level": "medium",
+          "action": "supplement",
+          "reason": "缺少字段：source_license"
+        }
+      ],
+      "confirmations": [],
+      "missing_fields": [],
+      "ok": true,
+      "found": true,
+      "material_id": "M06",
+      "message": "审核未通过，已阻断：R04 缺少字段：source_license"
+    },
+    "slot_m01": {
+      "ok": true,
+      "date": "2026-11-05",
+      "desired_time": "18:00",
+      "duration_minutes": 30,
+      "available": false,
+      "conflicts": [
+        {
+          "time": "18:00",
+          "material_id": "M00",
+          "title": "常规栏目",
+          "duration_minutes": 30
+        }
+      ],
+      "alternatives": [
+        "19:00",
+        "20:00",
+        "17:00"
+      ],
+      "message": "时段已占用，建议替代时段：19:00、20:00、17:00；需用户确认"
+    },
+    "slot_m05": {
+      "ok": true,
+      "date": "2026-11-06",
+      "desired_time": "18:00",
+      "duration_minutes": 60,
+      "available": false,
+      "conflicts": [
+        {
+          "time": "18:00",
+          "material_id": "S00",
+          "title": "已排期内容",
+          "duration_minutes": 60
+        }
+      ],
+      "alternatives": [],
+      "message": "时段已占用，当天没有可用替代时段"
+    },
+    "save_first": {
+      "ok": true,
+      "draft_id": "D001",
+      "duplicate": false,
+      "status": "draft_pending_confirmation",
+      "pending_confirmations": [
+        "原要求 18:00 已占用，建议改为 19:00，待用户确认"
+      ],
+      "message": "草稿 D001 已保存（仅草稿，未发布）"
+    },
+    "save_second": {
+      "ok": true,
+      "draft_id": "D001",
+      "duplicate": true,
+      "status": "draft_pending_confirmation",
+      "message": "相同素材同一天已有草稿 D001，未新增第二份"
+    },
+    "save_failed": {
+      "ok": false,
+      "error_type": "injected_failure",
+      "message": "模拟保存失败：草稿写入被拒绝（故障注入），未产生草稿"
+    }
+  }
+}

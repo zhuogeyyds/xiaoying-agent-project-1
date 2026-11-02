@@ -1,0 +1,125 @@
+{
+  "case": "p4-six-cases",
+  "timestamp": "2026-10-31T17:13:47+08:00",
+  "all_passed": true,
+  "cases": {
+    "01-m01-normal": {
+      "status": "draft_saved",
+      "drafts": 1,
+      "trace": "examples/traces/01-m01-normal.json",
+      "output": "examples/outputs/01-m01-normal.json"
+    },
+    "02-m02-missing": {
+      "status": "blocked",
+      "drafts": 0,
+      "trace": "examples/traces/02-m02-missing.json",
+      "output": "examples/outputs/02-m02-missing.json"
+    },
+    "03-m03-risk": {
+      "status": "blocked",
+      "drafts": 0,
+      "trace": "examples/traces/03-m03-risk.json",
+      "output": "examples/outputs/03-m03-risk.json"
+    },
+    "04-m01-conflict": {
+      "status": "draft_saved",
+      "drafts": 1,
+      "trace": "examples/traces/04-m01-conflict.json",
+      "output": "examples/outputs/04-m01-conflict.json"
+    },
+    "05-m01-save-failure": {
+      "status": "save_failed",
+      "drafts": 0,
+      "trace": "examples/traces/05-m01-save-failure.json",
+      "output": "examples/outputs/05-m01-save-failure.json"
+    },
+    "06-m01-duplicate": {
+      "status": "draft_saved",
+      "drafts": 1,
+      "trace": "examples/traces/06-m01-duplicate.json",
+      "output": "examples/outputs/06-m01-duplicate.json"
+    }
+  },
+  "checks": [
+    {
+      "name": "01 正常排期状态",
+      "passed": true,
+      "detail": "status=draft_saved"
+    },
+    {
+      "name": "01 冲突后建议 19:00 并标记待确认",
+      "passed": true,
+      "detail": "drafts=[('19:00', 'draft_pending_confirmation')]"
+    },
+    {
+      "name": "01 无发布完成表述",
+      "passed": true,
+      "detail": "red_line_ok=True"
+    },
+    {
+      "name": "02 信息缺失阻断",
+      "passed": true,
+      "detail": "status=blocked"
+    },
+    {
+      "name": "02 未保存草稿",
+      "passed": true,
+      "detail": "drafts=0"
+    },
+    {
+      "name": "03 高风险阻断",
+      "passed": true,
+      "detail": "status=blocked"
+    },
+    {
+      "name": "03 输出规则编号 R01",
+      "passed": true,
+      "detail": "check_rules risks"
+    },
+    {
+      "name": "03 未保存草稿",
+      "passed": true,
+      "detail": "drafts=0"
+    },
+    {
+      "name": "04 时段冲突后建议 19:00",
+      "passed": true,
+      "detail": "status=draft_saved"
+    },
+    {
+      "name": "04 冲突查询与替代时段",
+      "passed": true,
+      "detail": "query_slots conflict"
+    },
+    {
+      "name": "05 保存失败状态",
+      "passed": true,
+      "detail": "status=save_failed"
+    },
+    {
+      "name": "05 保存失败如实返回",
+      "passed": true,
+      "detail": "save_draft injected_failure"
+    },
+    {
+      "name": "05 未写入草稿",
+      "passed": true,
+      "detail": "drafts=0"
+    },
+    {
+      "name": "06 重复提交状态",
+      "passed": true,
+      "detail": "status=draft_saved"
+    },
+    {
+      "name": "06 返回已有草稿且标记重复",
+      "passed": true,
+      "detail": "save_draft duplicate"
+    },
+    {
+      "name": "06 草稿数为一",
+      "passed": true,
+      "detail": "drafts=1"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "case_id": "99-step-limit",
+  "material_id": "M01",
+  "date": "2026-11-05",
+  "time": "18:00",
+  "hard_time": true,
+  "fail_save": false,
+  "max_steps": 4,
+  "instruction": "请处理素材 M01。用户要求 2026-11-05 18:00 发布，这是硬性发布时间，不得擅自更改。请完成审核与排期，只保存草稿；如时段冲突，给出替代时段并标记待确认。"
+}

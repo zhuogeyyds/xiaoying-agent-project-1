@@ -1,0 +1,14 @@
+.venv/
+.uv-cache/
+.dsh-drop/
+.deepeval/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+*apiKey*.csv
+
+# 项目准备材料，不进入提交仓库
+方案文档.docx
+题目.txt
+提示词文档.txt

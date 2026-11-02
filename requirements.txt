@@ -1,0 +1,9 @@
+# 模型接入偏差（用户已确认）：
+# 原始约束为通义千问 ChatTongyi + qwen-plus；用户业务空间只开放 OpenAI 兼容接口，
+# 原生 DashScope /api/v1 返回 400 url error，改用 ChatOpenAI + qwen3.8-max-0902。
+# 因此不安装 dashscope / python-dotenv（当前代码路径不使用）。
+langgraph==1.2.19
+langgraph-prebuilt==1.1.1
+langchain==1.4.7
+langchain-openai==1.7.3
+pytest==9.2.0

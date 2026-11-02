@@ -1,0 +1,72 @@
+{
+  "case": "p7-final-check",
+  "timestamp": "2026-10-31T17:14:17+08:00",
+  "cases_rc": 0,
+  "pytest_rc": 0,
+  "local_passed": true,
+  "passed": 10,
+  "failed": 0,
+  "pending": 2,
+  "checks": [
+    {
+      "name": "1 只做一道题并记录题号",
+      "status": "PASS",
+      "detail": "README 与 docs/01 均记录题号 1"
+    },
+    {
+      "name": "2 一条命令可运行，README 有评审入口",
+      "status": "PASS",
+      "detail": "README 含评审入口与 final_check 命令"
+    },
+    {
+      "name": "3 存在真实模型决策循环，不是固定分支",
+      "status": "PASS",
+      "detail": "01 模型事件=4，query 冲突=1，save=1"
+    },
+    {
+      "name": "4 至少两条运行记录体现因工具结果改变动作",
+      "status": "PASS",
+      "detail": "01 冲突后保存 19:00；05 保存失败后停止并报告"
+    },
+    {
+      "name": "5 有步数上限和未完成状态",
+      "status": "PASS",
+      "detail": "99 status=incomplete，runner_note 含未完成"
+    },
+    {
+      "name": "6 六个用例齐全且运行记录真实",
+      "status": "PASS",
+      "detail": "缺失文件=无"
+    },
+    {
+      "name": "7 评估文档引用 examples 路径",
+      "status": "PASS",
+      "detail": "examples links=58, missing=none"
+    },
+    {
+      "name": "8 AI 使用文档如实",
+      "status": "PASS",
+      "detail": "docs/04 含 AI 辅助范围与用户主导说明（内容真实性由用户最终确认）"
+    },
+    {
+      "name": "9 无真实密钥和隐私数据",
+      "status": "PASS",
+      "detail": "key 命中=无；发布工具=['read_material', 'check_rules', 'query_slots', 'save_draft']；输出禁用词=无"
+    },
+    {
+      "name": "10 私有仓库已授权指定评审账号",
+      "status": "PENDING",
+      "detail": "本地无法验证；提交前由用户确认"
+    },
+    {
+      "name": "11 提交题号、仓库地址、最终 commit SHA",
+      "status": "PENDING",
+      "detail": "README 已留题号；GitHub URL 与 commit SHA 待用户提交时填写"
+    },
+    {
+      "name": "题目补充：离线 Mock 入口（仅流程）",
+      "status": "PASS",
+      "detail": "mode=mock, status=mock_draft_saved, boundary=ok"
+    }
+  ]
+}
