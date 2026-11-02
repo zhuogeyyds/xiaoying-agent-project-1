@@ -149,7 +149,7 @@ python -m src.cli --case examples/cases/01-m01-normal.json --offline-mock
 
 - **实际用时**：约 1 小时 50 分（2026-10-31 15:21–17:12），含环境安装、真实模型调试、P1–P7 阶段自测、离线 Mock 与等待确认；P7 本地总验收已通过。
 - **未完成部分**：
-  - 提交用的 GitHub URL、最终 commit SHA、私有仓库评审账号授权。
+  - 提交表单的最终 commit SHA（GitHub URL 已填；公开仓库无需授权）。
   - `trace.py` 未拆独立文件（记录逻辑在 `src/agent.py`）。
   - `SchedulingState` 的业务字段已定义，但运行中没有回写；trace 中的草稿由 `save_draft` 事件与 store 反推。
 
@@ -201,9 +201,9 @@ docs/            01-05 文档
 ## 提交信息
 
 - 题号：1
-- GitHub URL：待填
-- 最终 commit SHA：待填
-- 私有仓库授权：待确认（提交前让指定评审账号可读）
+- GitHub URL：https://github.com/zhuogeyyds/xiaoying-agent-project-1
+- 最终 commit SHA：见提交表单（以最终 HEAD 为准）
+- 私有仓库授权：公开仓库，无需授权
 
 ## 安全说明
 
